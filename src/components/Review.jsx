@@ -1,4 +1,4 @@
-import Marquee from "react-fast-marquee";
+
 
 
 
@@ -59,7 +59,7 @@ const Review = () => {
             <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
                 Our Team
             </h2>
-            <section  className="bg-white dark:bg-gray-900 block md:hidden">
+            {/* <section  className="bg-white dark:bg-gray-900 block lg:hidden">
                         <div className="container px-6 py-8 mx-auto">
                             
 
@@ -113,9 +113,9 @@ const Review = () => {
                                 </div>
                             </div>
                         </div>
-                    </section>
-            <div className="hidden md:block">
-                <Marquee >
+                    </section> */}
+            <div className="md:ml-0 ml-8">
+ 
                     <section className="bg-white dark:bg-gray-900">
                         <div className="container px-6 py-8 mx-auto">
                             
@@ -171,7 +171,7 @@ const Review = () => {
                             </div>
                         </div>
                     </section>
-                </Marquee>
+
 
             </div>
         </div>

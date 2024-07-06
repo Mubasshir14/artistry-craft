@@ -6,7 +6,7 @@ const CraftDetails = () => {
     const [craft, setCraft] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/craft/${id}`)
+        fetch(`https://artistry-craft-server-1.onrender.com/craft/${id}`)
             .then(res => res.json())
             .then(data => setCraft(data))
             .catch(error => console.error('Error fetching data:', error));

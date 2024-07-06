@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AllCraft = () => {
     const [loadData, setLoadData] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/craft")
+        fetch("https://artistry-craft-server-1.onrender.com/craft")
             .then((res) => res.json())
             .then((data) => {
                 setLoadData(data);

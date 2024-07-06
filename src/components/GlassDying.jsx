@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
-const CategoryCard = () => {
+const GlassDying = () => {
     const [cat, setCat] = useState([]);
 
     useEffect(() => {
         fetch('https://artistry-craft-server-1.onrender.com/craft')
             .then(res => res.json())
             .then(data => {
-                const cardMaking = data.filter(item => item.category === 'Card Making');
-                setCat(cardMaking);
+                const scrapBooking = data.filter(item => item.category === 'Glass Dying & Staining');
+                setCat(scrapBooking);
             })
             .catch(error => console.error('Error fetching data:', error));
     }, []);
-
     return (
+        <div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-10">
             {cat.map(item => (
                 <div key={item._id} className="p-6 rounded-md shadow-lg dark:bg-gray-50 dark:text-gray-900 hover:scale-105 transition-all duration-1000 hover:bg-gray-300 border-2">
@@ -44,7 +44,8 @@ const CategoryCard = () => {
                 </div>
             ))}
         </div>
+    </div>
     );
 };
 
-export default CategoryCard;
+export default GlassDying;

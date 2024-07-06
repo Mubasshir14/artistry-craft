@@ -14,7 +14,7 @@ const Nav = () => {
         setTheme(e.target.checked ? 'dark' : 'light');
     };
 
-    
+
 
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
@@ -29,8 +29,13 @@ const Nav = () => {
             <li><NavLink to='/all'>All Categories</NavLink></li>
             <li><NavLink to='/add'>Add Craft</NavLink></li>
             <li><NavLink to='/mycraft'>My Craft</NavLink></li>
-            <li><Link onClick={handleLogOut} to='/' className="btn md:hidden text-white bg-[#59C6D2]">Sign Out</Link></li>
-            <li><Link to='/signup' className="btn md:hidden text-white bg-[#59C6D2] ">Sign Up</Link></li>
+            {user ? (
+                <li>
+                    <Link onClick={handleLogOut} to='/' className="md:hidden">Sign Out</Link>
+                </li>
+            ) : (
+                ''
+            )}
             <li>
                 <label className="grid md:hidden cursor-pointer">
                     <input
@@ -141,12 +146,12 @@ const Nav = () => {
                     </label>
                     {user ? (
                         <>
-                        <img src={user?.photoURL} alt={user?.displayName} title={user?.displayName} className="w-8 h-8 rounded-full" />
+                            <img src={user?.photoURL} alt={user?.displayName} title={user?.displayName} className="w-8 h-8 rounded-full" />
 
-                        <Link onClick={handleLogOut} to='/' className="btn hidden md:flex text-white bg-[#59C6D2]">Sign Out</Link>
-                        
+                            <Link onClick={handleLogOut} to='/' className="btn hidden md:flex text-white bg-[#59C6D2]">Sign Out</Link>
+
                         </>
-                        
+
                     ) : (
                         <>
                             <Link to='/signin' className="btn text-white bg-[#23BE0A]">Sign In</Link>

@@ -27,7 +27,7 @@ const AddCraft = () => {
 
 
         // send data to server
-        fetch('http://localhost:5000/craft',{
+        fetch('https://artistry-craft-server-1.onrender.com/craft',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

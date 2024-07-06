@@ -20,6 +20,12 @@ import PrivateRoute from './components/PrivateRoute';
 import MyCraft from './components/MyCraft';
 import ErrorPage from './components/ErrorPage';
 
+import CategoryCard from './components/CategoryCard';
+import ScrapBooking from './components/ScrapBooking';
+import GlassPainting from './components/GlassPainting';
+import LampWorking from './components/LampWorking';
+import GlassDying from './components/GlassDying';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/craft',
         element: <Craft />,
-        // loader: () => fetch('http://localhost:5000/craft'),
+        // loader: () => fetch('https://artistry-craft-server-1.onrender.com/craft'),
       },
       {
         path: '/add',
@@ -62,7 +68,28 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignUp />,
+      },
+      {
+        path: '/card-making',
+        element: <CategoryCard/>
+      },
+      {
+        path: '/scrapbooking',
+        element: <ScrapBooking/>
+      },
+      {
+        path: '/glass-painting',
+        element: <GlassPainting/>
+      },
+      {
+        path: '/lampworking',
+        element: <LampWorking/>
+      },
+      {
+        path: '/glass-dying',
+        element: <GlassDying/>
       }
+
     ]
   },
 ]);

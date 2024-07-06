@@ -8,7 +8,7 @@ const Craft = () => {
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/craft')
+        fetch('https://artistry-craft-server-1.onrender.com/craft')
             .then(res => res.json())
             .then(data => {
                 setLoadData(data);

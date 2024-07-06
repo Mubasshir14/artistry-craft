@@ -10,7 +10,7 @@ const MyCraft = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('http://localhost:5000/craft')
+        fetch('https://artistry-craft-server-1.onrender.com/craft')
             .then(res => res.json())
             .then(data => {
                 setLoadData(data);
@@ -27,11 +27,10 @@ const MyCraft = () => {
 
     return (
         <div className="min-h-[calc(100vh-400px)] mt-1">
-            {/* <p>{filteredData.length}</p> */}
-
             {
-                filteredData.length > 0 ?
+                filteredData.length > 0 ? (
                     <div>
+                        <h1 className="mb-3 text-center mt-3 text-3xl font-bold">My Craft</h1>
                         <div className="overflow-x-auto">
                             <table className="min-w-full bg-white border border-green-200 shadow-xl shadow-green-400">
                                 <thead>
@@ -55,7 +54,7 @@ const MyCraft = () => {
                                             <td className="py-2 px-4">{item.stock}</td>
                                             <td className="py-2 px-4">{item.rating} <span className="text-yellow-500">★</span></td>
                                             <td className="py-2 px-4">
-                                                <Link to={`/craft/${item._id}`} className="px-4 py-2 bg-[#23BE0A] text-white rounded" >
+                                                <Link to={`/craft/${item._id}`} className="px-4 py-2 bg-[#23BE0A] text-white rounded">
                                                     View Details
                                                 </Link>
                                             </td>
@@ -66,20 +65,20 @@ const MyCraft = () => {
                         </div>
 
                         <div className="mt-6 text-center">
-                            <h1 className="mb-3 text-3xl font-bold">Add Your Craft</h1>
+                            {/* <h1 className="mb-3 text-3xl font-bold">Add Your Craft</h1> */}
                             <div>
                                 <Link to='/add' className="btn bg-[#23BE0A] text-white">Add Craft</Link>
                             </div>
                         </div>
                     </div>
-                    :
+                ) : (
                     <div className="lg:mt-40 text-center min-h-[calc(100vh-600px)]">
-                        <h1 className="mb-3 text-3xl font-bold">Add Your Craft</h1>
+                        <h1 className="mb-3 text-3xl font-bold">No Craft Added Yet</h1>
                         <div>
                             <Link to='/add' className="btn bg-[#23BE0A] text-white">Add Craft</Link>
                         </div>
                     </div>
-
+                )
             }
         </div>
     );

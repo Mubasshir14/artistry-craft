@@ -2,6 +2,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 // import banner from '../assets/banner3.jpg'
+import './Hero.css'
 import banner1 from '../assets/banner1.jpg'
 import banner2 from '../assets/banner2.jpg'
 import banner4 from '../assets/banner4.jpg'
@@ -11,7 +12,15 @@ import { TypeAnimation } from 'react-type-animation'
 const Hero = () => {
     return (
         <div >
-            <Carousel >
+            <Carousel
+            className="custom-carousel" 
+            showArrows={true} 
+            autoPlay={true} 
+            infiniteLoop={true} 
+            showThumbs={true} 
+            showStatus={false} 
+            interval={3000}
+            >
                 <div>
                     <img src={banner1} />
                     <div className="absolute -inset-0 translate-y-1/2 p-5">
